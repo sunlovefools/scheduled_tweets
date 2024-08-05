@@ -7,3 +7,4 @@ Rails.application.routes.draw do
   get 'test', to: 'about#hello'
   root to:"main#main"
 end
+  

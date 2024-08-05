@@ -15,6 +15,7 @@
 
   <body class='container'>
     <%= render partial:"shared/navbar" %>
+    <%= render partial:"shared/flash"%>
     <%= yield %>
   <%# Adding things here will cause every other webpage have the same things because application.htm.erb is the default layout file that is used to render across the whole application%>
   </body>
