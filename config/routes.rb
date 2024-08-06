@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   #get "about" = get request to URL path /about
   #to about#index = redirect to AboutController and perform action index in the AboutController
 
+  get "sign_up", to:'registration#new'
+  post "sign_up", to:"registration#create"  
+
   get 'test', to: 'about#hello'
   root to:"main#main"
 end
