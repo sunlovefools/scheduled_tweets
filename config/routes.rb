@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   get 'test', to: 'about#hello'
   root to:"main#main"
+
+  delete 'logout', to: 'session#destroy'
 end
   
