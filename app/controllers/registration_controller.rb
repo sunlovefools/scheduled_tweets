@@ -1,6 +1,6 @@
 class RegistrationController < ApplicationController
   def new
-    @user = User.new
+    @user = User.new #Assgning @user to User.new, rails know that all I will be using 'User' db for the data base in new.html.erb
   end
 
   def create

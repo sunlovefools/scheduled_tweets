@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get "log_in", to:'session#new'
   post "log_in", to:"session#create"  
 
+  get "password", to: 'passwords#edit', as: :update_password
+  patch "password", to: "passwords#update", as: :update_password
+
   get 'test', to: 'about#hello'
   root to:"main#main"
 
