@@ -11,7 +11,15 @@ Rails.application.routes.draw do
   post "log_in", to:"session#create"  
 
   get "password", to: 'passwords#edit', as: :update_password
-  patch "password", to: "passwords#update", as: :update_password
+  patch "password", to: "passwords#update"
+
+  get "password/reset", to: "password_reset#new"
+  post "password/reset", to: "password_reset#create"
+
+  get "password/reset/edit", to: "password_reset#edit"
+  patch "password/reset/edit", to: "password_reset#update"
+
+
 
   get 'test', to: 'about#hello'
   root to:"main#main"

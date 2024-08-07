@@ -1,0 +1,14 @@
+<h1>Password Reset</h1>
+
+Hi <%= params[:user].email%> <br/>
+
+Someone requested to a reset of your password,<br/>
+
+If this is you, click the link to reset your password. The link will expire automatically in 15 minutes<br/>
+
+<%= link_to "Reset Password", password_reset_edit_url(token: @token)%>
+<%# The path is changed to URL because _url you get the full link include the 'http:' %>
+<%# But for path you only get '/' %>
+<%# People who access this link will be outside of our domain hence only using the URL can lead them to the correct webpage %>
+
+<%# Need to set your default domain in dev %>
