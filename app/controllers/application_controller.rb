@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def make_sure_user_is_logged_in!
-    redirect_to log_in if Current.user.nil?
+    redirect_to log_in_path, alert: "You have log in first before accessing the Twitter Account" if Current.user.nil?
   end
 end

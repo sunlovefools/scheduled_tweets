@@ -19,6 +19,13 @@ Rails.application.routes.draw do
   get "password/reset/edit", to: "password_reset#edit"
   patch "password/reset/edit", to: "password_reset#update"
 
+  resources :twitter_accounts
+  #This resources is a routing helper
+  #It generated a set of paths with the RESTful method, "twitter_accounts#index, twitter_accounts#new..."
+  #twitter_accounts#destory is come with a path of "/twitter_accounts/:id/destroy"
+  #twitter_accounts is a controller
+  #Tips: Can check rails route to know what routes are established using this routing helper
+  
   get "auth/twitter/callback", to: "omniauth_callbacks#twitter"
 
   get 'test', to: 'about#hello'

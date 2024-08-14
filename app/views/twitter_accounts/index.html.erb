@@ -1,0 +1,16 @@
+
+<div class="d-flex align-items-center justify-content-between">
+    <h1>Twitter Accounts</h1>
+    <%= button_to "Connect Twitter Account", "/auth/twitter", method: :post,class: "btn btn-primary" %>
+</div>
+    <% @twitter_accounts.each do |twitter_account|%>
+    <%# Because a user might have more than 1 Twitter Accounts %>
+    <%# The code is to loop through the twitter accounts of the user and print out the username %>
+    <div class="d-flex align-items-center mb-4">
+        <div class="me-4">
+            <%= image_tag twitter_account.image, class: "rounded-circle"%>
+            <%= link_to"@#{twitter_account.username}", "https://x.com/#{twitter_account.username}", target: :_blank%>
+        </div>
+        <%= button_to"Disconnect Account", twitter_account, method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+<% end %>
