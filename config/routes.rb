@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   #twitter_accounts#destory is come with a path of "/twitter_accounts/:id/destroy"
   #twitter_accounts is a controller
   #Tips: Can check rails route to know what routes are established using this routing helper
+
+  resources :tweets
   
   get "auth/twitter/callback", to: "omniauth_callbacks#twitter"
 

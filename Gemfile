@@ -58,3 +58,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "omniauth-twitter", "~> 1.4"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem 'omniauth-twitter2'
+gem "x", "~> 0.14.1"
+
+gem "sidekiq", "~> 7.3"

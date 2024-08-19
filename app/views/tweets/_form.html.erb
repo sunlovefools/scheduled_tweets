@@ -1,0 +1,31 @@
+<%= form_with model:tweet do |form|%>
+    <%= render "/shared/error_messages",form: form %>
+
+    <div class="mb-3">
+        <%= form.label :twitter_account_id%>
+        <%= form.collection_select :twitter_account_id, Current.user.twitter_accounts, :id, :username, {}, {class: "form-control"}%>
+        <%# Syntax: form.collection_select :the key name for the value when submit, from which database, what kind of data is submitetd, what data is presented for user to select %>
+        <%= link_to "Connect Twitter Account", "/auth/twitter", method: :post %>
+        <%# Debugging use Inspect of the HTML in the browser %>
+    </div>
+
+    <div class= "mb-3">
+        <%= form.label :body%>
+        <%= form.text_area :body, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :publish_at%>
+        <div class="form-control">
+            <%= form.datetime_select :publish_at%>
+        </div>
+    </div>
+
+    <div class = "mb-3">
+        <%= form.submit "Schedule" , class: "btn btn-primary"%>
+        <% if form.object.persisted?%>
+            <%= link_to "Delete", form.object, method: :delete, data: {confirm: "Are You Sure?"}, class: "btn btn-outline-danger"%>
+        <%end%>
+    </div>
+
+<%end%> 
